@@ -13,10 +13,10 @@ class ZohoOAuthException extends \Exception
     protected $code = 0;
     
     // User-defined exception code
-    protected $file;
+    protected $filename;
     
     // Source filename of exception
-    protected $line;
+    protected int $line;
     
     // Source line of exception
     private $trace;
@@ -31,6 +31,6 @@ class ZohoOAuthException extends \Exception
     
     public function __toString()
     {
-        return get_class($this) . " Caused by:'{$this->message}' in {$this->file}({$this->line})\n" . "{$this->getTraceAsString()}";
+        return get_class($this) . " Caused by:'{$this->message}' in {$this->filename}({$this->line})\n" . "{$this->getTraceAsString()}";
     }
 }
